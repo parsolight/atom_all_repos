@@ -1,0 +1,55 @@
+{
+  "name": "about",
+  "author": "Machisté N. Quintana <mnquintana@users.noreply.github.com>",
+  "main": "./lib/main",
+  "version": "1.8.0",
+  "description": "View useful information about your Atom installation.",
+  "keywords": [],
+  "repository": "https://github.com/atom/about",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard"
+  },
+  "engines": {
+    "atom": ">=1.7 <2.0.0"
+  },
+  "dependencies": {
+    "etch": "0.9.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "standard": "^8.6.0"
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "deserializers": {
+    "AboutView": "deserializeAboutView"
+  },
+  "standard": {
+    "ignore": [],
+    "parser": "babel-eslint",
+    "globals": [
+      "atom",
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "fdescribe",
+      "xdescribe",
+      "expect",
+      "it",
+      "fit",
+      "xit",
+      "jasmine",
+      "runs",
+      "spyOn",
+      "waits",
+      "waitsFor",
+      "waitsForPromise"
+    ]
+  }
+}

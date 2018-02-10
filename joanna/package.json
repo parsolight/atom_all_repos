@@ -1,0 +1,31 @@
+{
+  "name": "joanna",
+  "version": "0.0.10",
+  "description": "JavaScript API Docs, compatible with donna",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/joanna.git"
+  },
+  "bin": {
+    "joanna": "src/cli.js",
+    "joanna-tello": "src/joanna-tello.js"
+  },
+  "author": "Max Brunsfeld",
+  "license": "MIT",
+  "dependencies": {
+    "walkdir": ">= 0.0.2",
+    "babylon": "^6.8.4",
+    "tello": "^1.0.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "1.10.x",
+    "dedent": "^0.6.0",
+    "donna": "^1.0.13",
+    "mocha": "^2.5.3"
+  }
+}

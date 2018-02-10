@@ -1,0 +1,21 @@
+{
+  "name": "language-css",
+  "description": "CSS support in Atom",
+  "version": "0.42.10",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "homepage": "http://atom.github.io/language-css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/language-css.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atom/language-css/issues"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.10.1"
+  }
+}

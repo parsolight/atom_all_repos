@@ -1,0 +1,291 @@
+// Overrides packages
+
+// find-and-replace + project-find ---------------------------
+
+.find-and-replace,
+.project-find {
+  padding: @ui-padding/4;
+  .input-block-item {
+    padding: @ui-padding/4;
+  }
+}
+
+// find-and-replace
+.find-and-replace {
+  .header,
+  .input-block {
+    min-width: @ui-size*22;
+  }
+
+  .input-block-item {
+    flex: 1 1 @ui-size*22;
+  }
+  .input-block-item--flex {
+    flex: 100 1 @ui-size*22;
+  }
+
+  .btn,
+  .btn-group-options .btn {
+    font-size: @ui-size*1.1;
+    padding: 0;
+  }
+
+  .btn-group-options .btn,
+  .btn-group-options .btn.option-selection,
+  .btn-group-options .btn.option-whole-word {
+    padding: 0;
+    font-size: @ui-input-size; // keep same as text input
+  }
+
+  .find-container atom-text-editor {
+    padding-right: @ui-size*5; // leave some room for the results count
+  }
+  .find-meta-container {
+    top: 0;
+    font-size: @ui-size;
+    line-height: @ui-size*2.5;
+  }
+}
+
+// project-find
+.project-find {
+  .header,
+  .input-block {
+    min-width: @ui-size*15;
+  }
+
+  .input-block-item {
+    flex: 1 1 @ui-size*14;
+  }
+  .input-block-item--flex {
+    flex: 100 1 @ui-size*20;
+  }
+
+  .btn {
+    font-size: @ui-size*1.1;
+    padding: 0;
+  }
+  .btn-group-options .btn {
+    padding: 0;
+    font-size: @ui-input-size; // keep same as text input
+  }
+}
+
+// Colorize find-and-replace based on results
+& when (@ui-hue >= 190) and (@ui-hue <= 340) {
+  .find-and-replace {
+    &.has-no-results .find-container atom-text-editor[mini].is-focused {
+      .invalid();
+      .selection .region {
+        background-color: mix(@text-color-error, @input-background-color, 50%);
+      }
+      .cursor {
+        border-color: @text-color-error;
+      }
+    }
+
+    &.has-results .find-container atom-text-editor[mini].is-focused {
+      .valid();
+      .selection .region {
+        background-color: mix(@text-color-success, @input-background-color, 50%);
+      }
+      .cursor {
+        border-color: @text-color-success;
+      }
+    }
+
+    &.has-results    .find-container .result-counter { color: @text-color-success; }
+    &.has-no-results .find-container .result-counter { color: @text-color-error; }
+  }
+}
+
+
+
+// Autocomplete ---------------------------
+
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li,
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li.selected .word {
+  color: var(--fg);
+}
+
+autocomplete-suggestion-list .character-match,
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li.selected .character-match {
+  color: var(--fg-strong);
+}
+
+autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
+  color: var(--fg);
+  background-color: var(--bg-highlight);
+}
+
+autocomplete-suggestion-list {
+  .icon.property {
+    color: var(--fg);
+    background-color: var(--bg-highlight);
+  }
+
+  .selected .icon.property {
+    color: var(--fg-strong);
+    background-color: var(--bg-selected);
+  }
+}
+
+
+// Timecop ---------------------------
+
+.timecop {
+  .package {
+    color: inherit;
+  }
+
+  .timecop-panel {
+    padding: @component-padding/2;
+    background-color: var(--bg);
+  }
+
+  .tool-panel {
+    padding: @component-padding/2;
+    background-color: var(--bg);
+  }
+
+  .inset-panel {
+    border: 1px solid var(--border);
+  }
+
+  .panel-heading {
+    .text(highlight);
+    border-color: var(--border);
+    background-color: var(--bg-highlight);
+  }
+
+  .list-item .inline-block {
+    line-height: 1.5;
+  }
+}
+
+
+// Command Palette + Fuzzy Finder ---------------------------
+
+.command-palette .list-group .character-match,
+.fuzzy-finder .list-group .character-match {
+  color: var(--fg-strong);
+}
+
+
+// Deprecation Cop ---------------------------
+
+.deprecation-cop {
+  .deprecation-overview {
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+
+
+
+// Tool Bar ---------------------------
+
+.tool-bar {
+  // Make it look the same as other panels
+  color: inherit;
+  background-color: var(--bg);
+  border: none;
+
+  // just a single border + more spacing
+  &.tool-bar-horizontal .tool-bar-spacer {
+    border-left: 0 none;
+    border-color: var(--border);
+    margin-left: var(--spacer);
+    margin-right: var(--spacer);
+  }
+  &.tool-bar-vertical .tool-bar-spacer {
+    border-bottom: 0 none;
+    border-color: var(--border);
+    margin-top: var(--spacer);
+    margin-bottom: var(--spacer);
+  }
+
+  // only show button styles on hover
+  button.tool-bar-btn {
+    color: inherit;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+
+    &:hover {
+      color: var(--fg-strong);
+      border-color: transparent;
+      background: var(--bg-selected);
+    }
+  }
+}
+
+
+
+// Terminal Tab ---------------------------
+
+terminal-view {
+  background-color: var(--bg);
+  .terminal,
+  .terminal .xterm-viewport {
+    background-color: transparent;
+  }
+
+  .terminal {
+    color: var(--syntax);
+  }
+
+  .terminal .xterm-color-1 { color: var(--syntax-1); }
+  .terminal .xterm-color-2 { color: var(--syntax-2); }
+  .terminal .xterm-color-3 { color: var(--syntax-3); }
+  .terminal .xterm-color-4 { color: var(--syntax-4); }
+  .terminal .xterm-color-5 { color: var(--syntax-5); }
+  .terminal .xterm-color-6 { color: var(--syntax-6); }
+  .terminal .xterm-color-7 { color: var(--syntax-7); }
+  .terminal .xterm-color-8 { color: var(--syntax-8); }
+}
+
+
+
+// Nuclide
+
+
+.nuclide-ui-toolbar {
+  border-color: var(--border);
+}
+
+.nuclide-ui-table {
+  border-color: var(--border);
+}
+
+.nuclide-ui-table-header {
+  color: var(--fg);
+  border-color: var(--border);
+  background-color: var(--bg-selected);
+}
+
+.nuclide-ui-table-row-alternate {
+  background-color: var(--bg-highlight);
+}
+
+.nuclide-ui-table-header-cell,
+.nuclide-ui-table-body-cell {
+  border-color: var(--border);
+}
+
+.nuclide-ui-table-row-selectable:not(.nuclide-ui-table-row-using-keyboard-nav):hover {
+  color: var(--fg-strong);
+  background-color: var(--bg-selected);
+}
+
+.nuclide-ui-table-row-selected {
+  color: var(--state-fg);
+  background-color: var(--bg-selected);
+}
+
+.nuclide-ui-table:focus .nuclide-ui-table-row-selected, .nuclide-ui-table:focus .nuclide-ui-table-row-selected a {
+  color: var(--state-fg);
+  background-color: var(--accent-bg);
+}
+

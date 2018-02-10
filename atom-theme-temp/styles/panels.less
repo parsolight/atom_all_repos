@@ -1,0 +1,72 @@
+
+// Panels
+
+atom-panel {
+  color: inherit;
+  background-color: transparent;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+
+  &.top {
+    border-right: 1px solid var(--border);
+  }
+  &.left {
+    border-right: 1px solid var(--border);
+  }
+  &.right {
+    border-left: 1px solid var(--border);
+  }
+  &.bottom {
+    border-right: 1px solid var(--border);
+  }
+  &.footer:last-child {
+    border-bottom: none;
+  }
+  &.tool-panel:empty {
+    border: none;
+  }
+}
+
+.panel {
+  &.bordered {
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+  }
+}
+
+.inset-panel {
+  position: relative;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  &.bordered {
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+  }
+  & .panel-heading {
+    border-color: var(--border);
+  }
+}
+
+.panel-heading {
+  .text(normal);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-highlight);
+
+  .btn {
+    padding-left: 8px;
+    padding-right: 8px;
+    // .btn-default(
+    //   lighten(@button-background-color, 10%),
+    //   lighten(@button-background-color-hover, 10%),
+    //   lighten(@button-background-color-selected, 10%),
+    //   lighten(@text-color, 10%)
+    // );
+  }
+}
+
+
+.tool-panel,
+.panel, 
+atom-panel {
+  background-color: transparent;
+}

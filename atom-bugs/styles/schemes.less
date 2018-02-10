@@ -1,0 +1,101 @@
+@import "variables";
+
+atom-bugs-schemes{
+  display: block!important;
+  margin: -10px;
+  .bugs-config-group {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .bugs-config-name {
+      float: left;
+      width: 30%;
+      padding: 5px 10px;
+      text-align: right;
+    }
+    .bugs-config-value {
+      float: left;
+      width: 70%;
+    }
+    .bugs-config-object {
+      position: relative;
+      display: table;
+      border-collapse: separate;
+      .input-group {
+        display: table-cell;
+        width: 100%;
+        input {
+          float: left;
+          width: 50%;
+          &:first-child,
+          &:last-child {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+        }
+      }
+      .input-group input:last-child:not(:first-child),
+      .input-group-btn .btn:first-child{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+      .input-group-btn {
+        float: right;
+        display: table-cell;
+      }
+    }
+  }
+  .atom-bugs-project-selector {
+    padding: 10px;
+    .form-control {
+      margin-left: 5px;
+      width: 200px;
+      display: inline-block;
+    }
+  }
+  .atom-bugs-scheme-configurator {
+    padding: 10px;
+    width: 100%;
+  }
+  .atom-bugs-scheme-selector {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    .btn.active {
+      background-color: @accent-color;
+      background-image: none;
+      color: @text-color-selected;
+    }
+  }
+  .panels-menu {
+    border: 0;
+    maring: 0;
+    border-radius: 0!important;
+  }
+  .list-group-item {
+    background-color: transparent;
+    border-color: rgba(0,0,0, .2);
+  }
+  .form-group {
+    margin-bottom: 7px;
+  }
+  .form-control,
+  .setting-title,
+  .bugs-config-name {
+    font-size: @font-size!important;
+  }
+  .checkbox {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .bugs-config-name {
+    margin-bottom: 0;
+  }
+  form {
+    padding: 0 3em;
+    max-height: 340px;
+    overflow: auto;
+  }
+}

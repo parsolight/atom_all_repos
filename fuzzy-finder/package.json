@@ -1,0 +1,74 @@
+{
+  "name": "fuzzy-finder",
+  "version": "1.7.5",
+  "main": "./lib/main",
+  "description": "Open an editor to a file in the project with `cmd-t`.",
+  "repository": "https://github.com/atom/fuzzy-finder",
+  "license": "MIT",
+  "dependencies": {
+    "async": "0.2.6",
+    "atom-select-list": "^0.7.0",
+    "fs-plus": "^3.0.0",
+    "fuzzaldrin": "^2.0",
+    "fuzzaldrin-plus": "^0.4.1",
+    "humanize-plus": "~1.8.2",
+    "minimatch": "~3.0.3",
+    "temp": "~0.8.1",
+    "underscore-plus": "^1.0.0",
+    "wrench": "^1.5"
+  },
+  "devDependencies": {
+    "standard": "*"
+  },
+  "standard": {
+    "globals": [
+      "atom",
+      "emit"
+    ],
+    "ignore": [
+      "spec/fixtures"
+    ]
+  },
+  "engines": {
+    "atom": "*"
+  },
+  "consumedServices": {
+    "atom.file-icons": {
+      "versions": {
+        "1.0.0": "consumeFileIcons"
+      }
+    },
+    "file-icons.element-icons": {
+      "versions": {
+        "1.0.0": "consumeElementIcons"
+      }
+    }
+  },
+  "configSchema": {
+    "ignoredNames": {
+      "type": "array",
+      "default": [],
+      "description": "List of string glob patterns. Files and directories matching these patterns will be ignored. This list is merged with the list defined by the core `Ignored Names` config setting. Example: `.git, ._*, Thumbs.db`."
+    },
+    "searchAllPanes": {
+      "type": "boolean",
+      "default": false,
+      "description": "Search all panes when opening files. If disabled, only the active pane is searched. Holding `shift` inverts this setting."
+    },
+    "preserveLastSearch": {
+      "type": "boolean",
+      "default": false,
+      "description": "Remember the typed query when closing the fuzzy finder and use that as the starting query next time the fuzzy finder is opened."
+    },
+    "useAlternateScoring": {
+      "type": "boolean",
+      "default": true,
+      "description": "Use an alternative scoring approach which prefers run of consecutive characters, acronyms and start of words. (Experimental)"
+    },
+    "prefillFromSelection": {
+      "type": "boolean",
+      "default": false,
+      "description": "Prefills search query with selected in current editor text"
+    }
+  }
+}

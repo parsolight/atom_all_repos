@@ -1,0 +1,49 @@
+// Pattern matching; ish is cray.
+// http://lesscss.org/#-pattern-matching-and-guard-expressions
+
+.text(normal) {
+  font-weight: normal;
+  color: var(--fg);
+}
+.text(subtle) {
+  font-weight: normal;
+  color: var(--fg-subtle);
+}
+.text(highlight) {
+  font-weight: normal;
+  color: var(--fg-strong);
+}
+.text(selected) {
+  .text(highlight)
+}
+
+.text(info) {
+  color: var(--accent-fg);
+}
+.text(success) {
+  color: var(--success-fg);
+}
+.text(warning) {
+  color: var(--warning-fg);
+}
+.text(error) {
+  color: var(--error-fg);
+}
+
+.focus() {
+  outline: none;
+  border-color: var(--accent-fg);
+  box-shadow: 0 0 0 1px var(--accent-fg);
+}
+
+.valid() {
+  border-color: @text-color-success;
+  box-shadow: 0 0 0 1px @text-color-success;
+  background-color: mix(@text-color-success, @input-background-color, 10%);
+}
+
+.invalid() {
+  border-color: @text-color-error;
+  box-shadow: 0 0 0 1px @text-color-error;
+  background-color: mix(@text-color-error, @input-background-color, 10%);
+}

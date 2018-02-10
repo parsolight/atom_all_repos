@@ -1,0 +1,44 @@
+{
+  "name": "atom-package-downloader",
+  "version": "0.0.0",
+  "description": "Downloads all Atom packages so we can search for patterns.",
+  "main": "./lib/atom-package-downloader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/atom-package-downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atom/atom-package-downloader/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/atom/atom-package-downloader/raw/master/LICENSE.md"
+    }
+  ],
+  "dependencies": {
+    "async": "^0.9.0",
+    "colors": "^1.1.2",
+    "glob": "^7.1.0",
+    "mkdirp": "^0.5.1",
+    "request": "^2.48.0",
+    "resolve": "^1.1.7",
+    "temp": "^0.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-do-expressions": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-plugin-transform-strict-mode": "^6.22.0",
+    "standard": "^8.4.0"
+  }
+}

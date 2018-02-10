@@ -1,0 +1,24 @@
+{
+  "name": "language-python",
+  "version": "0.49.0",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "description": "Python language support in Atom",
+  "homepage": "https://atom.github.io/language-python",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/language-python.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atom/language-python/issues"
+  },
+  "dependencies": {
+    "tree-sitter-python": "^0.3.0"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.10.1"
+  }
+}

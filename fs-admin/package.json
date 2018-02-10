@@ -1,0 +1,31 @@
+{
+  "name": "fs-admin",
+  "version": "0.1.6",
+  "description": "Manipulate files with escalated privileges",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "keywords": [
+    "file",
+    "system",
+    "privileges"
+  ],
+  "author": "Max Brunsfeld",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^3.5.0",
+    "nan": "^2.6.2"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "temp": "^0.8.3"
+  },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "describe",
+      "it"
+    ]
+  }
+}

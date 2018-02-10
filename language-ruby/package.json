@@ -1,0 +1,14 @@
+{
+  "name": "language-ruby",
+  "version": "0.71.4",
+  "description": "Ruby language support in Atom",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/atom/language-ruby",
+  "devDependencies": {
+    "coffeelint": "^1.10.1"
+  }
+}

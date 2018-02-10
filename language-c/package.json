@@ -1,0 +1,25 @@
+{
+  "version": "0.59.1",
+  "name": "language-c",
+  "description": "Atom language support for C/C++",
+  "homepage": "https://atom.github.io/language-c",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/language-c.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atom/language-c/issues"
+  },
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "dependencies": {
+    "tree-sitter-c": "^0.5.0",
+    "tree-sitter-cpp": "^0.4.0"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.10.1"
+  }
+}

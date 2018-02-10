@@ -1,0 +1,83 @@
+@import "variables";
+
+@atom-bugs-header-color: lighten(@button-background-color, 8%);
+@atom-bugs-body-color: lighten(@button-background-color, 2%);
+
+atom-bugs-overlay {
+  background-color: @atom-bugs-header-color;
+  border: 1px solid @button-border-color;
+  border-radius: 3px;
+  margin-left: -30px;
+  margin-top: 8px;
+  display: block;
+  min-width: 160px;
+  max-width: 320px;
+  font-size: 90%;
+  &:before {
+    content: '';
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    background-color: @atom-bugs-header-color;
+    width: 12px;
+    height: 12px;
+    position:absolute;
+    z-index: 1; // -1 to be below parent
+    top: 2px;
+    left: 10px;
+    border-radius: 0 0 0 3px;
+    border-bottom: 1px solid @button-border-color;
+    border-left: 1px solid @button-border-color;
+  }
+  atom-bugs-inspector-header {
+    background-color: @atom-bugs-header-color;
+    border-radius: 3px 3px 0 0;
+  }
+  atom-bugs-inspector-body {
+    background-color: @atom-bugs-body-color;
+    max-width: 320px;
+    overflow: auto;
+  }
+}
+
+atom-bugs-inspector {
+  display: block;
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,.4);
+  border-radius: 3px;
+  atom-bugs-inspector-header,
+  atom-bugs-inspector-body {
+    padding: 7px;
+    display: block;
+  }
+  atom-bugs-inspector-body {
+    border-top: 1px solid @button-border-color;
+    // white-space: pre;
+    .bugs-label {
+      padding: 1px 3px;
+    }
+  }
+  atom-bugs-inspector-property{
+    border-top: 1px solid @button-border-color;
+    display: block;
+    margin: 0 -7px;
+    padding: 3px 7px;
+    i {
+      color: @accent-color;
+      font-size: 120%;
+      margin-left: 4px;
+    }
+    &:first-child:not(.hide){
+      margin-top: -7px;
+      border-top: 0;
+    }
+    &:not(.hide):last-child{
+      margin-bottom: -7px;
+    }
+    atom-bugs-inspector-property {
+      margin: 0 -7px!important;
+      padding-left: 21px;
+    }
+  }
+}

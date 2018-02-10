@@ -1,0 +1,12 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "echo 'Skipping node-gyp installation as part of npm install.'"
+  },
+  "devDependencies": {
+    "nan": "^2.3.2"
+  },
+  "dependencies": {
+    "bindings": "1.2.1"
+  }
+}
